@@ -5,7 +5,6 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './server.component.html',
   styleUrls: ['./server.component.sass']
 })
-
 export class ServerComponent implements OnInit {
 
   constructor() { }
