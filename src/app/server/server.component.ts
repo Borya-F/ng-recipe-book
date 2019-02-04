@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {FormsModule} from '@angular/forms';
 
 @Component({
   selector: 'app-server',
@@ -10,6 +11,15 @@ export class ServerComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+
+  }
+
+  serverId: number = 10;
+  serverStatus: string = 'offline';
+
+
+  getServerStatus(): string {
+  	return this.serverStatus;
   }
 
 }
