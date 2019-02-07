@@ -8,11 +8,17 @@ import { Ingredient } from '../classes/ingredient.model';
 })
 export class ShoppingListComponent implements OnInit {
 
- ingredients: Array<Ingredient> = [];
+  ingredients: Array<Ingredient> = [
+    new Ingredient('banana',2),
+    new Ingredient('apple',3)
+  ];
 
   constructor() { }
 
   ngOnInit() {
   }
 
+  someFunction = () : string =>{
+  	return "ingredientname"
+  }
 }

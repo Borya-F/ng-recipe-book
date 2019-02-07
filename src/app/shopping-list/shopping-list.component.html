@@ -3,17 +3,17 @@
 		<app-shopping-list-edit></app-shopping-list-edit>
 		<hr>
 		<div class="list-group">
-			<a 
-				class="list-group-item list-group-item-action">
-				Dapibus ac facilisis in
-			</a>
-			<a 
-				class="list-group-item list-group-item-action">
-				Dapibus ac facilisis in
-			</a>
-			<a 
-				class="list-group-item list-group-item-action">
-				Dapibus ac facilisis in
+			<a 	
+				class="list-group-item list-group-item-action
+				d-flex 
+				justify-content-between 
+				align-items-center"
+				*ngFor="let ingredient of ingredients">
+				{{ingredient.name}} 
+				<span 
+					class="badge badge-primary badge-pill">
+					{{ingredient.amount}}
+				</span>
 			</a>
 		</div>	
 	</div>
