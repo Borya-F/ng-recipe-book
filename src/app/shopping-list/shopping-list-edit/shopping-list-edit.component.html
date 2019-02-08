@@ -11,7 +11,8 @@
 	  		type="text" 
 	  		class="form-control mb-2 col-12" 
 	  		id="ing_name" 
-	  		placeholder="ingredient Name">
+	  		placeholder="ingredient Name"
+	  		#nameInput>
 	</div>
 
 	<div class="col-auto">
@@ -24,16 +25,16 @@
 	  		type="number" 
 	  		class="form-control mb-2" 
 	  		id="ing_amount" 
-	  		placeholder="amount">
+	  		placeholder="amount"
+	  		#amountInput>
 	</div>
 
 	
-
-
 	<div class="col-auto">
 	  <button 
 	  	type="submit" 
-	  	class="btn btn-primary mb-2">
+	  	class="btn btn-success mb-2"
+	  	(click)="onSave(nameInput.value,amountInput.value)">
 	  	save
 	  </button>
 	</div>
@@ -43,6 +44,14 @@
 	  	type="submit" 
 	  	class="btn btn-danger mb-2">
 	  	delete
+	  </button>
+	</div>
+
+	<div class="col-auto">
+	  <button 
+	  	type="submit" 
+	  	class="btn btn-primary mb-2">
+	  	clear
 	  </button>
 	</div>
 
