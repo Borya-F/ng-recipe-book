@@ -1,5 +1,6 @@
-import { Component, OnInit,OnChanges, Input, SimpleChange} from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { Recipe } from '../../classes/recipe.model';
+import { RecipeService} from '../../services/recipe.service'
 
 @Component({
   selector: 'app-recipe-detail',
@@ -8,19 +9,18 @@ import { Recipe } from '../../classes/recipe.model';
 })
 export class RecipeDetailComponent implements OnInit {
 
-	@Input() recipe: Recipe;
-	imgPath: string;
+  recipe: Recipe;
 
-  constructor() { }
+  constructor(private recipeService: RecipeService) { }
 
   ngOnInit() {
+    this.recipeService.recipeSelected.subscribe(
+      (recipe:Recipe)=>{
+        this.recipe = recipe;
+      }
+    );
   }
 
-  ngOnChanges(changes:SimpleChange) {
-  	if(this.recipe){
-  		this.imgPath = this.recipe.imagePath.replace(/50/g,'350');
-  	}
-  	
-  }
+
 
 }

@@ -11,8 +11,6 @@ export class ShoppingListEditComponent implements OnInit {
 	@Output() newIngredientSaved = new EventEmitter<Ingredient>();
 	@Output() clearIngredientList = new EventEmitter<void>();
 
-	// @Input() ingredientEdit: Ingredient;
-
   constructor() { }
 
   ngOnInit() {

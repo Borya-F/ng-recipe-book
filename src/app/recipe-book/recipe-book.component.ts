@@ -8,17 +8,10 @@ import {Recipe} from '../classes/recipe.model';
 })
 export class RecipeBookComponent implements OnInit {
 
-	activeRecipe: Recipe;
 
   constructor() { }
 
   ngOnInit() {
   }
-
-  displayRecipeDetails(recievedRecipe:Recipe){
-  	this.activeRecipe = recievedRecipe;
-  }
-
-
 
 }
