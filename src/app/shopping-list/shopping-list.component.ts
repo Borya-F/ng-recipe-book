@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Ingredient } from '../classes/ingredient.model';
 
 @Component({
@@ -7,6 +7,8 @@ import { Ingredient } from '../classes/ingredient.model';
   styleUrls: ['./shopping-list.component.sass']
 })
 export class ShoppingListComponent implements OnInit {
+
+  selectedIngredient: Ingredient;
 
   ingredients: Array<Ingredient> = [
     new Ingredient('banana',2),
@@ -18,7 +20,16 @@ export class ShoppingListComponent implements OnInit {
   ngOnInit() {
   }
 
-   addToIngredientlist(newIngredient){
+   addToIngredientlist(newIngredient:Ingredient){
      this.ingredients.push(newIngredient);
+   }
+
+   clearIngredients(){
+     this.ingredients = [];
+   }
+
+   editIngredient(ingredient:Ingredient){
+     this.selectedIngredient = ingredient;
+     console.log(this.selectedIngredient);
    }
 }

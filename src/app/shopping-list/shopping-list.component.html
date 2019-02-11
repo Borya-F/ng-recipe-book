@@ -1,7 +1,8 @@
 <div class="row">
 	<div class="col-10">
 		<app-shopping-list-edit
-		(newIngredientSaved)='addToIngredientlist($event)'></app-shopping-list-edit>
+		(newIngredientSaved)='addToIngredientlist($event)'
+		(clearIngredientList)="clearIngredients()"></app-shopping-list-edit>
 		<hr>
 		<div class="list-group">
 			<a 	
@@ -9,7 +10,8 @@
 				d-flex 
 				justify-content-between 
 				align-items-center"
-				*ngFor="let ingredient of ingredients">
+				*ngFor="let ingredient of ingredients"
+				(click)="editIngredient(ingredient)">
 				{{ingredient.name}} 
 				<span 
 					class="badge badge-primary badge-pill">
