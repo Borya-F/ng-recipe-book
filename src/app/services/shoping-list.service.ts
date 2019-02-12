@@ -21,7 +21,6 @@ export class ShopingListService {
 
   addIngredient(ingredient:Ingredient){
 
-  	console.log(`got ingredient with name: ${ingredient.name}`);
   	this.ingredients.push(ingredient);
   	this.ingredientsChanged.emit(this.ingredients.slice());
   }
